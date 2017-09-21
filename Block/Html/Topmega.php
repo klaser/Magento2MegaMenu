@@ -91,7 +91,6 @@ class Topmega extends Topmenu
         TreeFactory $treeFactory,
         CategoryFactory $categoryFactory,
         \Magento\Cms\Model\Template\FilterProvider $filterProvider,
-        \Magento\Store\Model\StoreManagerInterface $storeManager,
         \Magento\Cms\Model\BlockFactory $blockFactory,
         Registry $registry,
         \Jnext\Megamenu\Helper\Data $dataHelper,
@@ -101,7 +100,7 @@ class Topmega extends Topmenu
         parent::__construct($context,$nodeFactory,$treeFactory, $data);
         $this->categoryFactory = $categoryFactory;
         $this->_filterProvider = $filterProvider;
-        $this->_storeManager = $storeManager;
+        $this->_storeManager = $context->getStoreManager();
         $this->_blockFactory = $blockFactory;
         $this->coreRegistry = $registry;
         $this->dataHelper = $dataHelper;
